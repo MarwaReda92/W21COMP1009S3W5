@@ -33,7 +33,6 @@ public class Card {
         String filePath = String.format("images/%s_of_%s.png", faceName,suit); //this string.format is like printf
         //it will place the strings from faceName and suit and pass it into the string
         //the images/ will force java to find the images in the right directory
-        System.out.println(filePath);
         cardImage = new Image(filePath);
     }
 

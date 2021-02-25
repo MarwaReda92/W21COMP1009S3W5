@@ -3,6 +3,8 @@ package controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import models.*; //anything in this package should be included here, let them talk
 import models.DeckOfCards;
 
@@ -22,6 +24,9 @@ public class CardViewController implements Initializable { //initializable being
     @FXML
     private Label faceValueLabel;
 
+    @FXML
+    private ImageView imageView;
+
     private DeckOfCards deckOfCards; //inside of the class but outside of the method
 
 
@@ -39,6 +44,7 @@ public class CardViewController implements Initializable { //initializable being
         faceNameLabel.setText(card.getFaceName()); //the card object will give us back the faceName and update the label
         suitLabel.setText(card.getSuit());
         faceValueLabel.setText(Integer.toString(card.getFaceValue())); //using the  int wrapper class to convert int to String
+        imageView.setImage(card.getCardImage());
     }
 
 
