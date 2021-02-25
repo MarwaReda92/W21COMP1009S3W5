@@ -7,44 +7,58 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CardViewController">
    <children>
-      <GridPane layoutX="327.0" layoutY="99.0" prefHeight="178.0" prefWidth="255.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <HBox alignment="TOP_CENTER" layoutX="14.0" layoutY="26.0" prefHeight="400.0" prefWidth="600.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="faceNameLabel" text="Label" GridPane.columnIndex="1">
-               <font>
-                  <Font size="18.0" />
-               </font></Label>
-            <Label text="Face Name">
-               <font>
-                  <Font size="18.0" />
-               </font></Label>
-            <Label text="Suit" GridPane.rowIndex="1">
-               <font>
-                  <Font size="18.0" />
-               </font></Label>
-            <Label text="Face Value" GridPane.rowIndex="2">
-               <font>
-                  <Font size="18.0" />
-               </font></Label>
-            <Label fx:id="suitLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <font>
-                  <Font size="18.0" />
-               </font></Label>
-            <Label fx:id="faceValueLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <font>
-                  <Font size="18.0" />
-               </font></Label>
+            <ImageView fx:id="imageView" fitHeight="347.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true" />
+            <VBox alignment="CENTER">
+               <children>
+                  <GridPane prefHeight="178.0" prefWidth="255.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="faceNameLabel" text="Label" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Face Name">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Suit" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Face Value" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="suitLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="faceValueLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <Button mnemonicParsing="false" onAction="#getNextCard" prefHeight="42.0" prefWidth="255.0" text="Get Next Card" />
+               </children>
+            </VBox>
          </children>
-      </GridPane>
-      <Button layoutX="293.0" layoutY="302.0" mnemonicParsing="false" onAction="#getNextCard" prefHeight="42.0" prefWidth="255.0" text="Get Next Card" />
-      <ImageView fx:id="imageView" fitHeight="347.0" fitWidth="249.0" layoutX="14.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
+      </HBox>
    </children>
 </AnchorPane>
