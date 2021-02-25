@@ -1,13 +1,20 @@
 package controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import models.*; //anything in this package should be included here, let them talk
 import models.DeckOfCards;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -45,6 +52,19 @@ public class CardViewController implements Initializable { //initializable being
         suitLabel.setText(card.getSuit());
         faceValueLabel.setText(Integer.toString(card.getFaceValue())); //using the  int wrapper class to convert int to String
         imageView.setImage(card.getCardImage());
+    }
+
+    @FXML
+    private void changeToHandOfCards(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../views/handOfCardsView.fxml"));
+        Scene scene = new Scene(root);
+
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();//this line gets the Stage information
+
+        stage.setScene(scene);
+        stage.setTitle("Your Hand of Cards");
+        stage.show();
+
     }
 
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -55,7 +56,17 @@
                         </Label>
                      </children>
                   </GridPane>
-                  <Button mnemonicParsing="false" onAction="#getNextCard" prefHeight="42.0" prefWidth="255.0" text="Get Next Card" />
+                  <Button mnemonicParsing="false" onAction="#getNextCard" prefHeight="42.0" prefWidth="255.0" text="Get Next Card">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#changeToHandOfCards" prefHeight="42.0" prefWidth="255.0" text="Get Hand of Cards">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
                </children>
             </VBox>
          </children>
