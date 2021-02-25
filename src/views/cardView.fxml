@@ -43,5 +43,6 @@
                </font></Label>
          </children>
       </GridPane>
+      <Button layoutX="293.0" layoutY="283.0" mnemonicParsing="false" onAction="#getNextCard" prefHeight="61.0" prefWidth="171.0" text="Get Next Card" />
    </children>
 </AnchorPane>

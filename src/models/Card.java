@@ -1,5 +1,7 @@
 package models;
 
+import javafx.scene.image.Image;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -7,6 +9,7 @@ public class Card {
     //Instance variables - the attributes we will model in the class
     private String faceName, suit; //face name is Ace/jack etc
     private int faceValue;
+    private Image cardImage; //instance variable so each card can represent itself as an image
 
     /**
      * The goal of the constructor is to allocate memory for the object. When this is called it will
@@ -20,6 +23,22 @@ public class Card {
         setFaceName(face);
         setSuit(suit);
         setFaceValue(faceValue);
+        setCardImage();
+    }
+
+    /**
+     * This method will use the face name and suit to establish the correct image to load
+     */
+    private void setCardImage(){
+        String filePath = String.format("images/%s_of_%s.png", faceName,suit); //this string.format is like printf
+        //it will place the strings from faceName and suit and pass it into the string
+        //the images/ will force java to find the images in the right directory
+        System.out.println(filePath);
+        cardImage = new Image(filePath);
+    }
+
+    public Image getCardImage() {
+        return cardImage;
     }
 
     public String getFaceName() {
@@ -30,8 +49,8 @@ public class Card {
     * This returns a list of all the valid face names - static so it can be used in other classes
     */
     public static List<String> getFaceNames(){ //static so that it is common to the Card class, do not need an instance of the class to call this method
-        return Arrays.asList("two","three","four","five","six","seven","eight",
-                "nine","ten","jack","queen","king","ace");
+        return Arrays.asList("2","3","4","5","6","7","8",
+                "9","10","jack","queen","king","ace");
     }
 
     /**
